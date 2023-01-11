@@ -16,7 +16,7 @@ exports.get = function(event, context, callback) {
 
 
 exports.get2 = function(event, context, callback) {
-  var contents = <div>Hello World</div>;
+  var contents = '<div>Hello World</div>';
   var result = {
     statusCode: 200,
     body: contents.toString(),
