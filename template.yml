@@ -38,7 +38,23 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /test1
+            Method: get
+  GetHelloWorld2:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub 'awscodestar-${ProjectId}-lambda-GetHelloWorld'
+      Handler: index.get2
+      Runtime: nodejs16.x
+      Role:
+        Fn::GetAtt:
+        - LambdaExecutionRole
+        - Arn
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /test2
             Method: get
   LambdaExecutionRole:
     Description: Creating service role in IAM for AWS Lambda
